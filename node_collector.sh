@@ -2,14 +2,14 @@
 
 #The file location values used are for apache Cassandra defaults. 
 #Change these in case other than default.
-CONFIG_PATH=/cass1/apache-cassandra-3.11.8/conf
-LOG_PATH=/cass1/apache-cassandra-3.11.8/logs
+CONFIG_PATH=/etc/cassandra
+LOG_PATH=/var/log/cassandra
 
 #List of data directories; if more than one list all with delimiter ','
 #e.g. DATA_PATHS=path/to/dir1,path/to/dir2
-DATA_PATHS=/cass1/apache-cassandra-3.11.8/data/data
+DATA_PATHS=/var/lib/cassandra/data/data
 GC_LOGGING_ENABLED=yes
-CASSANDRA_HOME=/cass1/apache-cassandra-3.11.8
+CASSANDRA_HOME=/var/lib/cassandra
 GC_LOG_PATH=${CASSANDRA_HOME}/logs
 
 #Variables to hold data collection and system info.
