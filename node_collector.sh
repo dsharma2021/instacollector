@@ -19,6 +19,7 @@ data_file=$data_dir/disk.info
 io_stats_file=$data_dir/io_stat.info
 cpu_info=$data_dir/cpu.info
 data_file_count=$data_dir/sstable_count.info
+block_info=$data_dir/storage_device.info
 
 copy_config_files()
 {
@@ -69,6 +70,12 @@ do
 done
 }
 
+get_block_info()
+{
+echo "$ip : Executing /usr/bin/lsblk command"
+/usr/bin/lsblk > $block_info
+}
+
 get_cpu_info()
 {
 echo "$ip : Executing /proc/cpuinfo command"	
@@ -114,7 +121,7 @@ get_io_stats &
 copy_config_files &
 get_size_info &
 get_node_tool_info &
-
+get_block_info &
 
 echo "$ip : Waiting for background functions to complete"
 wait
