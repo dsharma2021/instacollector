@@ -21,6 +21,11 @@ cpu_info=$data_dir/cpu.info
 data_file_count=$data_dir/sstable_count.info
 block_info=$data_dir/storage_device.info
 
+#Managing Instacollector version  
+ic_version=2
+echo "Instacollector version = ${ic_version}" > $data_dir/ic_version.info
+
+
 copy_config_files()
 {
 echo "$ip : Copying files"
