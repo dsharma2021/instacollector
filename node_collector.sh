@@ -72,8 +72,8 @@ done
 
 get_block_info()
 {
-echo "$ip : Executing /usr/bin/lsblk command"
-/usr/bin/lsblk > $block_info
+echo "$ip : Executing lsblk command"
+lsblk > $block_info
 }
 
 get_cpu_info()
